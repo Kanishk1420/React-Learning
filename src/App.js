@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './MyComponents/Header'
+import {Todo} from './MyComponents/Todo'
+import Footer from './MyComponents/Footer'
+import { Todos } from "./MyComponents/Todos";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header title="My" number = {8}/>
+      <Todo/>
+      <br />
+      <Footer/>
+      <br/>
+      <Todos  title={[ 23,56,89]}/>
+    </>
+  )
 }
 
-export default App;
+export default App
