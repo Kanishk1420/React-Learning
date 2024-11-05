@@ -56,22 +56,22 @@ export default function Header(props) {
           <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
-                <a href="/Home" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
+                <a href="/#" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/About" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
+                <a href="/#" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
                   About
                 </a>
               </li>
               <li>
-                <a href="/Services" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
+                <a href="/#" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
                   Services
                 </a>
               </li>
               <li>
-                <a href="/Contact" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
+                <a href="/#" className="block py-2 pr-4 pl-3 text-purple-400 lg:p-0 no-underline">
                   Contact
                 </a>
               </li>
