@@ -72,7 +72,7 @@ export default function Textform(props) {
         </div>
 
         {/* Password Input */}
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col mb-4 font-serif">
           <label
             className={`block font-semibold text-lg ${
               props.mode === "light" ? "text-gray-800" : "text-white"
