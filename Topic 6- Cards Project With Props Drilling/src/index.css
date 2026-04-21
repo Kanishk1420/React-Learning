@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'helvetica neue';
+    font-family: 'Inter', sans-serif;
 }
 html,
 body {
@@ -17,14 +17,14 @@ body {
   padding: 30px;
   display: flex;
   gap: 30px;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .card{
-  height: 330px;
-  width: 280px;
+  height: auto;
+  min-height: 400px;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 35px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -34,80 +34,88 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .top img{
-  height: 42px;
-  width: 42px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-  border: 1px solid #dadada;
-  padding: 3px;
-  object-fit: cover;
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  object-fit: contain;
 }
 .top button{
   display: flex;
   align-items: center;
-  border: 1px solid #dadada;
-  padding: 3px 6px;
-  font-size: 10px;
-  border-radius: 5px;
-  gap: 3px;
+  border: 1px solid #e0e0e0;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  gap: 6px;
   background-color: transparent;
-  color: #8b8b8b;
+  color: #777;
+  cursor: pointer;
 }
 .center h3{
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .center h3 span{
-  font-size: 9px;
-  font-weight: 400;
-  color: #aeaeae;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
 }
 
 .center h2{
-  font-size: 21px;
-  font-weight: 500;
-
+  font-size: 26px;
+  font-weight: 800;
+  margin: 5px 0 15px;
+  line-height: 1.1;
 }
 .center .tag{
   display: flex;
-  margin-top: 10px;
-  gap: 5px;
+  margin-bottom: 45px;
+  gap: 10px;
 }
 .center .tag h4{
-  font-size: 10px;
-  background-color: #e4e4e4;
-  color: #202020;
-  font-weight: 500;
-  padding: 4px 8px;
-  border-radius: 3px;
+  font-size: 12px;
+  background-color: #ebebeb;
+  color: #111;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 .bottom{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1.5px solid #d7d7d7ce;
-  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 20px;
 }
 
 .bottom button{
-  background-color: rgb(18, 18, 18);
+  background-color: #000;
   color: white;
-  padding: 7px 16px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 5px;
-  font-size: 12px;
-  column-width: 600;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .bottom h3{
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 800;
   margin-bottom: 4px;
 }
 .bottom p{
-  font-size: 10px;
+  font-size: 13px;
   color: #8b8b8b;
+  font-weight: 500;
 }
