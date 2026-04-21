@@ -14,11 +14,10 @@ body{
   background-color: #111;
 }
 .parent{
-  padding: 20px;
+  gap: 30px;
   display: flex;
-  /* align-items: center; */
   flex-wrap: wrap;
-  gap: 20px;
+  padding: 10px;
 }
 .card{
   width: 300px;
