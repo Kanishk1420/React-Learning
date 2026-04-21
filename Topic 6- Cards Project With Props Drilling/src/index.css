@@ -57,13 +57,9 @@ body {
   color: #8b8b8b;
 }
 
-
-.center{
-}
-
 .center h3{
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
 }
 .center h3 span{
   font-size: 9px;
@@ -73,7 +69,7 @@ body {
 
 .center h2{
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 600;
 
 }
 .center .tag{
@@ -85,7 +81,7 @@ body {
   font-size: 10px;
   background-color: #e4e4e4;
   color: #202020;
-  font-weight: 500;
+  font-weight: 700;
   padding: 4px 8px;
   border-radius: 3px;
 }

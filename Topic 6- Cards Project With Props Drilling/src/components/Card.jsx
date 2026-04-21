@@ -12,7 +12,7 @@ const Card = (props) => {
           <button>Save<Bookmark size={14}/></button>
         </div>
           <div className='center'>
-            <h3>{props.companyname}<span>5 days ago</span></h3>
+            <h3>{props.companyname} <span>{props.date}</span></h3>
             <h2>{props.post}</h2>
             <div className="tag">
               <h4>{props.tag1}</h4>
