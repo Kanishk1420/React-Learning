@@ -182,3 +182,11 @@
     border-right-color: var(--border);
   }
 }
+.card{
+  width: 300px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background-color: var(--card-bg);
+}
