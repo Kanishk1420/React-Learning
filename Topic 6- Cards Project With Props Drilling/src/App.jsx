@@ -42,7 +42,7 @@ const App = () => {
       location: "Los Gatos, USA"
     },
     {
-      brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png",
+      brandLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWhqOC_8TpCUmksmFEIm1YqtkLvN8N-S1dew&s",
       companyName: "Google",
       datePosted: "1 week ago",
       post: "Cloud Solutions Architect",
