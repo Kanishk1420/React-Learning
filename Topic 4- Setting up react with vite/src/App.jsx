@@ -1,5 +1,4 @@
 import React from 'react'
-import './index.css'
 import Card from './components/Card.jsx'
 import Variablecalling from './components/Variablecalling.jsx'
 const App = () => {
