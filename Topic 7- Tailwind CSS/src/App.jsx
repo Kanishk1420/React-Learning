@@ -1,8 +1,11 @@
+import Section1 from './components/Section-1/Section1'
+import Section2 from './components/Section-2/Section2'
 import './index.css'
 function App() {
   return (
     <>
-     <div className="text-red-300 text-3xl">App</div>
+     <Section1 />
+     <Section2 />
     </>
   )
 }
