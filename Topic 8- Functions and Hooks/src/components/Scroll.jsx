@@ -9,7 +9,7 @@ const Scroll = () => {
   }
   return (
       <div onWheel={pagescrolling}>
-      <h1 className='h-screen'>Scrolled</h1>
+      <h1 className='max-h-min'>Scrolled</h1>
     </div>
   )
 }
