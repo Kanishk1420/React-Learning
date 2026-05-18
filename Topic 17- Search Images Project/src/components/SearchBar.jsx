@@ -9,12 +9,14 @@ const dispatch = useDispatch();
 const handlesubmit = (e)=>{
     e.preventDefault();
    dispatch(setQuery(text));
+   console.log(text);
     settext('');
 }
   return (
     <div>
       <form className=" flex bg-gray-900 gap-5 p-10" onSubmit={(e)=>handlesubmit(e)}>
-        <input 
+        <input
+        id="search" 
         type="text"
         value={text}
         onChange={(e)=>settext(e.target.value)}
