@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { addCollection, addedToast } from '../redux/features/collectionSlice'
+import { FaDownload } from "react-icons/fa";
 
 const ResultCard = ({ item }) => {
 
@@ -10,6 +11,20 @@ const ResultCard = ({ item }) => {
         dispatch(addedToast())
         
     }
+  async function downloadFile(url, filename) {
+  const res = await fetch(url);
+  const blob = await res.blob();
+  const blobUrl = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = blobUrl;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(blobUrl);
+}
 
     return (
         <div className='w-[18vw] relative h-80 bg-white rounded-xl overflow-hidden'>
@@ -26,6 +41,13 @@ const ResultCard = ({ item }) => {
                     }}
                     className='bg-indigo-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-medium'>
                     Save
+                </button>
+                <button
+                    onClick={() => {
+                        downloadFile(item.src, `${item.title}.${item.type == 'photo' ? 'jpg' : item.type == 'video' ? 'mp4' : 'gif'}`)
+                    }}
+                    className='bg-green-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-medium'>
+                    <FaDownload />
                 </button>
             </div>
         </div>

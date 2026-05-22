@@ -18,9 +18,7 @@ const canGoNext = isGifTab ? canGoNextGif : results.length > 0
               if (!canGoPrev) return
               if (isGifTab) {
                   const prevToken = tenorHistory[tenorHistory.length - 1]
-                  const nextHistory = tenorHistory.slice(0, -1)
                   dispatch(setTenorPos(prevToken || ''))
-                  dispatch(setTenorHistory(nextHistory))
                   dispatch(setPage(page - 1))
                   return
               }
