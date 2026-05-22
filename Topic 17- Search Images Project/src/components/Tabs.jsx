@@ -1,4 +1,4 @@
-import { setPage } from '../redux/features/searchSlice'
+import { setPage, resetTenor } from '../redux/features/searchSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { setActiveTabs } from '../redux/features/searchSlice'
 
@@ -19,6 +19,7 @@ const Tabs = () => {
                         onClick={() => {
                             dispatch(setActiveTabs(elem));
                             dispatch(setPage(1))
+                            dispatch(resetTenor())
                         }}
                     >
                         {elem}

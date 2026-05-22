@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchphotos, fetchVideos, fetchgifs } from '../api/mediaApi'
-import { setLoading, setError, setResults } from '../redux/features/searchSlice'
+import { setLoading, setError, setResults, setTenorNext } from '../redux/features/searchSlice'
 import { useEffect } from 'react'
 import ResultCard from './ResultCard'
 import Pagination from './Pagination'
@@ -8,7 +8,7 @@ import Pagination from './Pagination'
 const ResultGrid = () => {
 
     const dispatch = useDispatch()
-    const { query, activeTab, results, loading, error, page } = useSelector((store) => store.search)
+    const { query, activeTab, results, loading, error, page, tenorPos } = useSelector((store) => store.search)
 
     useEffect(function () {
         if (!query) return 
@@ -41,9 +41,9 @@ const ResultGrid = () => {
                     }))
                 }
                 if (activeTab == 'gif') {
-                    let response = await fetchgifs(query, page)
+                    let response = await fetchgifs(query, tenorPos)
 
-                    data = response.data.results.map((item) => ({
+                    data = response.results.map((item) => ({
                         id: item.id,
                         title: item.title || 'GIF',
                         type: 'gif',
@@ -51,6 +51,8 @@ const ResultGrid = () => {
                         src: item.media_formats.gif.url,
                         url:item.url
                     }))
+
+                    dispatch(setTenorNext(response.next || ''))
 
                 }
                 dispatch(setResults(data))
@@ -60,11 +62,10 @@ const ResultGrid = () => {
             }
         }
         getData()
-    }, [query, activeTab,dispatch, page])
+    }, [query, activeTab,dispatch, page, tenorPos])
 
     if (error) return <h1 className='flex justify-center'>Error</h1>
-    if (loading) return <h1 className='flex justify-center'>Loading...</h1>
-
+    if (loading) return <h1 className='flex justify-center'>Loading...</h1>   
     return (
         <div className='flex justify-between w-full flex-wrap gap-6 overflow-auto px-10'>
             {results.map((item, idx) => {

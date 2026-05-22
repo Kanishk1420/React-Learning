@@ -8,7 +8,10 @@ const searchSlice = createSlice({
         results: [],
         loading: false,
         error: null,
-        page:1
+        page: 1,
+        tenorPos: '',
+        tenorNext: '',
+        tenorHistory: []
     },
     reducers: {
         setQuery(state, action) {
@@ -34,6 +37,20 @@ const searchSlice = createSlice({
         },
         setPage(state, action) {
             state.page = action.payload
+        },
+        setTenorPos(state, action) {
+            state.tenorPos = action.payload
+        },
+        setTenorNext(state, action) {
+            state.tenorNext = action.payload
+        },
+        setTenorHistory(state, action) {
+            state.tenorHistory = action.payload
+        },
+        resetTenor(state) {
+            state.tenorPos = ''
+            state.tenorNext = ''
+            state.tenorHistory = []
         }
     }
 })
@@ -46,7 +63,11 @@ export const {
     setLoading,
     setResults,
     clearResults,
-    setPage
+    setPage,
+    setTenorPos,
+    setTenorNext,
+    setTenorHistory,
+    resetTenor
 } = searchSlice.actions
 
 

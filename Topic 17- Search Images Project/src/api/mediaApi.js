@@ -19,9 +19,9 @@ export async function fetchVideos(query, page = 1, per_page = 20) {
   });
   return response.data;
 }
-export async function fetchgifs(query, page = "", limit = 20) {
+export async function fetchgifs(query, pos = "", limit = 20) {
   const response = await axios.get("https://tenor.googleapis.com/v2/search", {
-    params: { q: query, key: TENOR_KEY, limit, pos: page },
+    params: { q: query, key: TENOR_KEY, limit, pos },
   });
-  return response;
+  return response.data;
 }
