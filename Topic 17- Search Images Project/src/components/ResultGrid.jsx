@@ -61,8 +61,8 @@ const ResultGrid = () => {
         getData()
     }, [query, activeTab,dispatch])
 
-    if (error) return <h1>Error</h1>
-    if (loading) return <h1>Loading...</h1>
+    if (error) return <h1 className='flex justify-center'>Error</h1>
+    if (loading) return <h1 className='flex justify-center'>Loading...</h1>
 
     return (
         <div className='flex justify-between w-full flex-wrap gap-6 overflow-auto px-10'>
