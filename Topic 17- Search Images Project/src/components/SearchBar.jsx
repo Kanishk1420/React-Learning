@@ -1,32 +1,39 @@
-import React from "react";
-import { useState } from "react";
-import {useDispatch} from 'react-redux'
-import { setQuery } from "../features/searchSlice";
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setQuery } from '../redux/features/searchSlice'
+
 const SearchBar = () => {
-const [text, settext] = useState('');
-const dispatch = useDispatch();
 
-const handlesubmit = (e)=>{
-    e.preventDefault();
-   dispatch(setQuery(text));
-   console.log(text);
-    settext('');
+    const [text, setText] = useState('')
+
+    const dispatch = useDispatch()
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(setQuery(text))
+        setText('')
+    }
+
+    return (
+        <div>
+            <form onSubmit={(e) => {
+                submitHandler(e)
+            }} className='flex  bg-(--c1) gap-5 py-10 px-10'>
+
+                <input
+                    value={text}
+                    onChange={(e) => {
+                        setText(e.target.value)
+                    }}
+                    required
+                    className='w-full border-2 px-6 py-3 text-xl rounded outline-none'
+                    type="text"
+                    placeholder='Search anything...' />
+
+                <button className='active:scale-95 cursor-pointer border-2 px-6 py-3 text-xl rounded outline-none'>Search</button>
+            </form>
+        </div>
+    )
 }
-  return (
-    <div>
-      <form className=" flex bg-gray-900 gap-5 p-10" onSubmit={(e)=>handlesubmit(e)}>
-        <input
-        id="search" 
-        type="text"
-        value={text}
-        onChange={(e)=>settext(e.target.value)}
-        required
-        className=" w-full border-2 px-4 py-2 text-xl rounded outline-none" 
-        placeholder="Search anything..." />
-        <button className="border-2 px-4 py-2 text-xl rounded outline-none cursor-pointer active:scale-0.95">Search</button>
-      </form>
-    </div>
-  );
-};
 
-export default SearchBar;
+export default SearchBar
