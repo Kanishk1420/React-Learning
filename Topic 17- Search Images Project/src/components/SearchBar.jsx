@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setQuery } from '../redux/features/searchSlice'
+import { setQuery, setPage } from '../redux/features/searchSlice'
 
 const SearchBar = () => {
 
@@ -10,8 +10,8 @@ const SearchBar = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(setQuery(text))
-        setText('')
+        dispatch(setQuery(text));
+        dispatch(setPage(1));
     }
 
     return (

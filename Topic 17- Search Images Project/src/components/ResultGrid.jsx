@@ -3,11 +3,12 @@ import { fetchphotos, fetchVideos, fetchgifs } from '../api/mediaApi'
 import { setLoading, setError, setResults } from '../redux/features/searchSlice'
 import { useEffect } from 'react'
 import ResultCard from './ResultCard'
+import Pagination from './Pagination'
 
 const ResultGrid = () => {
 
     const dispatch = useDispatch()
-    const { query, activeTab, results, loading, error } = useSelector((store) => store.search)
+    const { query, activeTab, results, loading, error, page } = useSelector((store) => store.search)
 
     useEffect(function () {
         if (!query) return 
@@ -16,7 +17,7 @@ const ResultGrid = () => {
                 dispatch(setLoading())
                 let data = []
                 if (activeTab == 'photos') {
-                    let response = await fetchphotos(query)                    
+                    let response = await fetchphotos(query, page)                    
                     data = response.results.map((item) => ({
                         id: item.id,
                         type: 'photo',
@@ -27,7 +28,7 @@ const ResultGrid = () => {
                     }))
                 }
                 if (activeTab == 'videos') {
-                    let response = await fetchVideos(query)
+                    let response = await fetchVideos(query, page)
                     
 
                     data = response.videos.map((item) => ({
@@ -40,7 +41,7 @@ const ResultGrid = () => {
                     }))
                 }
                 if (activeTab == 'gif') {
-                    let response = await fetchgifs(query)
+                    let response = await fetchgifs(query, page)
 
                     data = response.data.results.map((item) => ({
                         id: item.id,
@@ -59,7 +60,7 @@ const ResultGrid = () => {
             }
         }
         getData()
-    }, [query, activeTab,dispatch])
+    }, [query, activeTab,dispatch, page])
 
     if (error) return <h1 className='flex justify-center'>Error</h1>
     if (loading) return <h1 className='flex justify-center'>Loading...</h1>
@@ -71,6 +72,7 @@ const ResultGrid = () => {
                     <ResultCard item={item} />
                 </div>
             })}
+            <Pagination />
         </div>
     )
 }

@@ -7,7 +7,8 @@ const searchSlice = createSlice({
         activeTab: 'photos',
         results: [],
         loading: false,
-        error: null
+        error: null,
+        page:1
     },
     reducers: {
         setQuery(state, action) {
@@ -30,6 +31,9 @@ const searchSlice = createSlice({
         },
         clearResults(state) {
             state.results = []
+        },
+        setPage(state, action) {
+            state.page = action.payload
         }
     }
 })
@@ -41,7 +45,8 @@ export const {
     setError,
     setLoading,
     setResults,
-    clearResults
+    clearResults,
+    setPage
 } = searchSlice.actions
 
 
