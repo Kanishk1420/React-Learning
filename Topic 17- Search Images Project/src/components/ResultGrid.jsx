@@ -65,7 +65,8 @@ const ResultGrid = () => {
     }, [query, activeTab,dispatch, page, tenorPos])
 
     if (error) return <h1 className='flex justify-center'>Error</h1>
-    if (loading) return <h1 className='flex justify-center'>Loading...</h1>   
+    if (loading) return <h1 className='flex justify-center'>Loading...</h1>  
+    if (results.length == 0) return <h1 className='flex justify-center'>No Results Found</h1> 
     return (
         <div className='flex justify-between w-full flex-wrap gap-6 overflow-auto px-10'>
             {results.map((item, idx) => {
