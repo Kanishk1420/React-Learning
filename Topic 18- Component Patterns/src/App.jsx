@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './components/Card'
 import Tab from './components/Card'
+import Button from './components/Button'
 const App = () => {
   return (
     <div>
@@ -17,6 +18,11 @@ const App = () => {
         <h1>Tab Component</h1>
         <p>This is a tab component that can be reused.</p>
       </Tab>
+      <div style={{ display: "flex", gap: "8px" }}>
+      <Button text = "Save" color="green"/>
+      <Button text = "Delete" color="red"/>
+      <Button text = "Update" color="blue"/>
+      </div>
     </div>
   )
 }
