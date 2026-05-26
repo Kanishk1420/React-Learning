@@ -19,7 +19,7 @@ const App = () => {
         <h1>Tab Component</h1>
         <p>This is a tab component that can be reused.</p>
       </Tab>
-      {/* The Button component can be reused with different text and colors with reusabel component*/}
+      {/* The Button component can be reused with different text and colors with reusable component*/}
       <div style={{ display: "flex", gap: "8px" }}>
       <Button text = "Save" color="green"/>
       <Button text = "Delete" color="red"/>

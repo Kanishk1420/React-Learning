@@ -3,7 +3,7 @@
 const Button = ({text,color}) => {
   return (
     <div>
-    <button style={{background: color, color:"white", padding: "10px 20px", borderRadius: "8px"}}>{text}</button>
+    <button style={{background: color, color:"white", padding: "10px 20px", borderRadius: "8px", border: "none"}}>{text}</button>
     </div>
   )
 }
