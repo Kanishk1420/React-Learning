@@ -6,7 +6,7 @@ const [data, setdata] = useState('');
 async function getdata(){
  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
  console.log(response);
- const data = await response.json() // why need waiat again because the response will again go to promoise and we need to wait for that promise to resolve to get the actual data so we need to use await again to wait for that promise to resolve and get the actual data
+ const data = await response.json() // why need wait again because the response will again go to promise and we need to wait for that promise to resolve to get the actual data so we need to use await again to wait for that promise to resolve and get the actual data
  console.log(data);
  setdata(data.title);
 }

@@ -13,10 +13,10 @@ const localstorage = () => {
     city: 'Ranchi',
     State: 'Jharkhand'
   }
-  localStorage.setItem("user", user) // This will not work as expected because localStorage only stores strings here it will store [object Object]
-  localStorage.setItem("user", JSON.stringify(user)) // This will work as expected because we are converting the object to a string using JSON.stringify
-  localStorage.getItem("user") // This will return the stringified version of the user object
-  const c = JSON.parse(localStorage.getItem("user")) // This will convert the stringified version of the user object back to an object using JSON.parse
+  localStorage.setItem("user", user) // This will not work as expected because localStorage only stores strings here it will store [object Object].
+  localStorage.setItem("user", JSON.stringify(user)) // This will work as expected because we are converting the object to a string using JSON.stringify.
+  localStorage.getItem("user") // This will return the stringified version of the user object.
+  const c = JSON.parse(localStorage.getItem("user")) // This will convert the stringified version of the user object back to an object using JSON.parse.
   console.log(c);
   return (
     <div>
