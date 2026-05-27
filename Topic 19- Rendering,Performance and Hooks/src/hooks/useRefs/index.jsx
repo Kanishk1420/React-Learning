@@ -3,7 +3,8 @@ export const UseRefs = () => {
     // const usernameRef = document.getElementById('username');
     // const passwordRef = document.getElementById('password');
     // This is not the correct way to access DOM elements in React. We should use useRef instead. 
-    const passwordRef = useRef('');
+    // useRef is a hook that allows us to create a reference to a DOM element. We can then access the DOM element using the current property of the reference.
+    const passwordRef = useRef(''); 
     const usernameRef = useRef('');
     
 const handleSubmit = (e) => {
